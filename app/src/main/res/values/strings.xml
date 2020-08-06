@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TMDBClient</string>
+    <string name="movies">Movies</string>
+    <string name="tvshows">Tv Shows</string>
+    <string name="artists">Artists</string>
+    <string name="loading">Loading...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="message_text">Text of your message</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="maybe">Maybe</string>
+    <string name="text_for_test">MaybeMaybeMaybeMaybeMaybe\nMaybeMaybeMaybeMaybeMaybe\nMaybeMaybeMaybeMaybeMaybe\nMaybeMaybeMaybeMaybeMaybe\nMaybeMaybeMaybeMaybeMaybe\n
+    MaybeMaybeMaybeMaybeMaybe\nMaybeMaybeMaybeMaybeMaybe\nMaybeMaybeMaybeMaybeMaybe\nMaybeMaybeMaybeMaybeMaybe\nMaybeMaybeMaybeMaybeMaybe\nMaybeMaybeMaybeMaybeMaybe\n</string>
+    <string name="photo">Photo</string>
+</resources>

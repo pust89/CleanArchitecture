@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.pustovit.tmdbclient.presentation.contentscreen.homefrag.HomeFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        tools:context=".presentation.homescreen.HomeActivity">
+
+        <Button
+            android:id="@+id/btnMovie"
+            style="@style/buttons_home_fragment"
+            android:layout_width="140dp"
+            android:onClick="@{() -> viewModel.onClickButtonMovie()}"
+            android:text="@string/movies"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnArtist"
+            style="@style/buttons_home_fragment"
+            android:layout_width="140dp"
+            android:onClick="@{() -> viewModel.onClickButtonArtist()}"
+            android:text="@string/artists"
+            app:layout_constraintBottom_toTopOf="@+id/btnMovie"
+            app:layout_constraintEnd_toEndOf="@+id/btnMovie"
+            app:layout_constraintStart_toStartOf="@+id/btnMovie"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

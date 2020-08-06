@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movie"
+            type="com.pustovit.tmdbclient.domain.model.Movie" />
+
+        <variable
+            name="movieClickListener"
+            type="com.pustovit.tmdbclient.presentation.common.ItemClickListener" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_rounded1"
+            android:onClick="@{() -> movieClickListener.onClick(movie)}">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_well"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="8dp" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_well"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="8dp" />
+
+
+            <TextView
+                android:id="@+id/artist_name"
+                style="@style/text_main"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{movie.title}"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toStartOf="@+id/right_well"
+                app:layout_constraintStart_toStartOf="@+id/left_well"
+                app:layout_constraintTop_toBottomOf="@+id/poster_movie"
+                tools:text="Movie title" />
+
+            <TextView
+                android:id="@+id/short_overview_movie"
+                style="@style/text_sub"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{movie.shortOverview}"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/right_well"
+                app:layout_constraintStart_toStartOf="@+id/left_well"
+                app:layout_constraintTop_toBottomOf="@+id/artist_name"
+                app:layout_constraintVertical_bias="1.0"
+                tools:text="This is a movie description" />
+
+            <ImageView
+                android:id="@+id/poster_movie"
+                android:layout_width="100dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:adjustViewBounds="false"
+                android:scaleType="centerInside"
+                app:imageUrl="@{movie.posterMediumSizeUrl}"
+                app:layout_constraintDimensionRatio="H, 1:1.5"
+                app:layout_constraintEnd_toStartOf="@+id/right_well"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/test_poster" />
+
+
+            <TextView
+                android:id="@+id/popularity_movie"
+                style="@style/text_sub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/right_well"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/poster_movie"
+                app:layout_constraintTop_toTopOf="@+id/poster_movie"
+                app:movieRating="@{movie.popularity}"
+                tools:text="9.9" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
