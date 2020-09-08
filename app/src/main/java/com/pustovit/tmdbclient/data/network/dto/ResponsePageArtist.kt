@@ -30,7 +30,7 @@ data class ArtistDto(
     @Json(name = "id")
     val id: Int,
     @Json(name = "profile_path")
-    val profilePath: String,
+    val profilePath: String? = "",
     @Json(name = "adult")
     val adult: Boolean,
     @Json(name = "known_for")
