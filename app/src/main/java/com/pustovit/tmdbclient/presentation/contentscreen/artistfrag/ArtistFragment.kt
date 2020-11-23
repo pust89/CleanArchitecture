@@ -2,6 +2,7 @@ package com.pustovit.tmdbclient.presentation.contentscreen.artistfrag
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,8 +30,8 @@ class ArtistFragment : BaseFragment<ArtistFragmentBinding, ArtistViewModel, Arti
         get() = binding.swipeContainer
 
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.artistViewModel = viewModel
 
         setupRecyclerView(binding.recyclerView)
@@ -40,9 +41,7 @@ class ArtistFragment : BaseFragment<ArtistFragmentBinding, ArtistViewModel, Arti
                 viewModel.updateArtists()
             }
         }
-        Timber.tag(LOG_TAG).d("onActivityCreated")
     }
-
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {
 

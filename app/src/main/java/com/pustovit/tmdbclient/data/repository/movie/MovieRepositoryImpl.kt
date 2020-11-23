@@ -22,6 +22,7 @@ constructor(
 ) : MovieRepository {
 
     override suspend fun getMovies(): List<Movie>? {
+        delay(1000)
         return getMoviesFromCacheDataSource()
     }
 

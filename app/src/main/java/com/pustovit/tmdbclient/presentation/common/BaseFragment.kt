@@ -59,7 +59,6 @@ abstract class BaseFragment<BINDING : ViewDataBinding, VM : BaseFragmentViewMode
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Timber.tag(LOG_TAG).d("viewModelFactory.hashCode() = ${viewModelFactory.hashCode()}")
         viewModel = ViewModelProvider(this, viewModelFactory).get(viewModelClass)
     }
 

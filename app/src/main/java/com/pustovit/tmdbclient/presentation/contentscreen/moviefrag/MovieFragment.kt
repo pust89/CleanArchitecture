@@ -2,6 +2,7 @@ package com.pustovit.tmdbclient.presentation.contentscreen.moviefrag
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,9 +32,8 @@ class MovieFragment : BaseFragment<MovieFragmentBinding, MovieViewModel, MovieVi
         get() = binding.swipeContainer
 
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         binding.movieViewModel = viewModel
         setupRecyclerView(binding.recyclerView)
 
@@ -42,7 +42,6 @@ class MovieFragment : BaseFragment<MovieFragmentBinding, MovieViewModel, MovieVi
                 viewModel.updateMovies()
             }
         }
-        Timber.tag(LOG_TAG).d("onActivityCreated")
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView) {

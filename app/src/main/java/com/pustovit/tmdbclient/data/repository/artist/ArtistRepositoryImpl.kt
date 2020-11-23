@@ -11,6 +11,7 @@ import com.pustovit.tmdbclient.data.repository.artist.datasource.ArtistLocalData
 import com.pustovit.tmdbclient.data.repository.artist.datasource.ArtistRemoteDataSource
 import com.pustovit.tmdbclient.domain.model.Artist
 import com.pustovit.tmdbclient.domain.repository.ArtistRepository
+import kotlinx.coroutines.delay
 import retrofit2.Response
 import timber.log.Timber
 
@@ -21,6 +22,7 @@ class ArtistRepositoryImpl(
 ) : ArtistRepository {
 
     override suspend fun getActors(): List<Artist>? {
+        delay(1000)
         return getArtistFromCacheDataSource()
     }
 
